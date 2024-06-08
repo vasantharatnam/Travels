@@ -7,11 +7,18 @@ import heroImg02 from "../assets/images/hero-img02.jpg"
 import heroVideo from "../assets/images/hero-video.mp4"
 import worldImg from "../assets/images/world.png"
 import Subtitle from '../shared/Subtitle'
+import MasonryimagesGallery from '../Components/image-gallery/MasonryimagesGallery'
 
 import SearchBar from '../shared/SearchBar'
 import ServicesList from '../services/ServicesList'
 
 import FeaturedTourList from '../Components/Featured-tours/FeaturedTourList'
+
+import experienceImg from "../assets/images/experience.png"
+
+import Testimonials from '../Components/Testimonial/Testimonials'
+
+import NewsLetter from '../shared/NewsLetter'
 
 function Home() {
   return (
@@ -78,6 +85,77 @@ function Home() {
                 </Container>
              </section>
           {/* feature tour  section  ends*/}
+
+          {/* experience  section  starts*/}
+          <section>
+              <Container>
+                <Row>
+                  <Col lg = '6'>
+                     <div className = "experience__content">
+                        <Subtitle subtitle = {'Experience'}/>
+                        <h2>With our all experience<br/> we will serve you</h2>
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, quod.<br/>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                     </div>
+                     <div className = "counter__wrapper d-flex align-items-center gap-5">
+                       <div className = "counter__box">
+                             <span>12k+</span>
+                             <h6>Successfull Trip</h6>
+                       </div>
+                       <div className = "counter__box">
+                             <span>2k+</span>
+                             <h6>Regular clients</h6>
+                       </div>
+                       <div className = "counter__box">
+                             <span>15</span>
+                             <h6>Years Experience</h6>
+                       </div>
+                    </div>
+                  </Col>
+                  <Col lg = '6'>
+                     <div className = "experience__img">
+                         <img src = {experienceImg} alt = ""/>
+                     </div>
+                  </Col>
+                </Row>
+              </Container>
+          </section>
+          {/* experience  section  ends*/}
+
+          {/* gallery section  starts*/}
+          <section>
+              <Container>
+                <Row>
+                  <Col lg = '12'>
+                    <Subtitle subtitle = {'Gallery'}/>
+                    <h2 className = "gallert__title">Visit our client’s tour gallery</h2>
+                  </Col>
+                  <Col lg = '12'>
+                    <MasonryimagesGallery/>
+                  </Col>
+                </Row>
+              </Container>
+          </section>
+          {/* gallery section  ends*/}
+
+          {/* testimonial section  starts*/}
+            <section>
+               <Container>
+                <Row>
+                   <Col lg = '12'>
+                     <Subtitle subtitle = {'Fans Love'}/>
+                     <h2 className = "testimonial__title">What our fans say about Us</h2>
+                   </Col>
+                   <Col  lg = '12'>
+                    <Testimonials/>
+                   </Col>
+                </Row>
+               </Container>
+            </section>
+          {/* testimonial section ends */}
+          <NewsLetter/>
     </>
   )
 }
