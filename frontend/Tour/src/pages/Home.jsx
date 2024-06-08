@@ -11,6 +11,8 @@ import Subtitle from '../shared/Subtitle'
 import SearchBar from '../shared/SearchBar'
 import ServicesList from '../services/ServicesList'
 
+import FeaturedTourList from '../Components/Featured-tours/FeaturedTourList'
+
 function Home() {
   return (
     <>
@@ -60,6 +62,22 @@ function Home() {
              </Row>
            </Container>
         </section>
+
+          {/* hero section  ends*/}
+
+          {/* feature tour  section  starts*/}
+             <section>
+                <Container>
+                   <Row>
+                     <Col lg = '12' className = 'mb-5'>
+                       <Subtitle subtitle = {'Explore'}/>
+                       <h2 className = "featured__tour-title">Our featured tours</h2>
+                     </Col>
+                     <FeaturedTourList/>
+                   </Row>
+                </Container>
+             </section>
+          {/* feature tour  section  ends*/}
     </>
   )
 }
