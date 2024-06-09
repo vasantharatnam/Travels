@@ -16,7 +16,7 @@ function Routers() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/tours" element={<Tours />} />
-      <Route path="/tour/:id" element={<TourDetails />} />
+      <Route path="/tours/:id" element={<TourDetails />} />
       <Route path="/search-result-list" element={<SearchResultList />} />
     </Routes>
   )
