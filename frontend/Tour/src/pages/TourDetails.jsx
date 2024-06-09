@@ -9,6 +9,8 @@ import Bookings from '../Components/Booking/Bookings'
 
 import avatar from '../assets/images/avatar.jpg'
 
+import NewsLetter from '../shared/NewsLetter'
+
 function TourDetails() {
 
   const { id } = useParams();
@@ -125,7 +127,8 @@ function TourDetails() {
                </Col>
             </Row>
          </Container>
-      </section>
+      </section> 
+      <NewsLetter/>
     </>
   )
 }

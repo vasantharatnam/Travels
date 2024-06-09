@@ -3,20 +3,15 @@ import './booking.css'
 
 import {  Form , FormGroup, ListGroup, ListGroupItem , Button} from 'reactstrap';
 
+ import { Navigate, useNavigate } from 'react-router-dom';
 
 
-const handleChange = (e) =>{
-    setCredentials( prev => ({ ...prev , [e.target.id]:e.target.value}))
-};
-
-const handleClick = (e) =>{
-     e.preventDefault();
-     console.log(credentials);
-}
 
 function Bookings({tour , avgRating}) {
 
    const {price , reviews} = tour;
+
+   const navigate = useNavigate();
 
    const [credentials , setCredentials] =  useState({
     userId : '01',
@@ -31,9 +26,13 @@ function Bookings({tour , avgRating}) {
     setCredentials( prev => ({ ...prev , [e.target.id]:e.target.value}))
 };
 
+  const serviceFee = 10;
+  const totalAmount = Number(price)*Number(credentials.guestSize) + Number(serviceFee);
+
+
 const handleClick = (e) =>{
      e.preventDefault();
-     console.log(credentials);
+     navigate("/thank-you");
 }
 
 
@@ -72,11 +71,11 @@ const handleClick = (e) =>{
                   </ListGroupItem>
                   <ListGroupItem className = "border-0 px-0">
                          <h5>Service charge</h5>
-                         <span>$10</span>
+                         <span>${serviceFee}</span>
                   </ListGroupItem>
                   <ListGroupItem className = " total border-0 px-0">
                          <h5>Total</h5>
-                         <span>$109</span>
+                         <span>${totalAmount}</span>
                   </ListGroupItem>
               </ListGroup>
                <Button className = "btn primary__btn w-100 mt-4" onClick = {handleClick}>
