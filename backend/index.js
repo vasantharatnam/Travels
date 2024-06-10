@@ -1,9 +1,10 @@
 
-const express = require('express');
-const cors  = require('cors');
-const cookieParser = require('cookie-parser');
-const  mongoose = require('mongoose');
-const dotenv = require('dotenv');
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+import tourRoute from './routes/tours.js'
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
+app.use('/tours' ,tourRoute )
 
 app.listen(PORT, (error) =>{
     connect();
