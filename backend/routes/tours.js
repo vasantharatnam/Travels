@@ -4,16 +4,17 @@ import {createTour , updateTour  , deleteTour , getSingleTour, getAllTour, getTo
 
 const router = express.Router();
 
+import { verifyAdmin } from "../utils/verifyToken.js";
 
 //create new tour
-router.post('/' , createTour);
+router.post('/' , verifyAdmin,  createTour);
 
 
 //update new tour
-router.put('/:id' , updateTour);
+router.put('/:id' , verifyAdmin, updateTour);
 
 //delete new tour
-router.delete('/:id' , deleteTour);
+router.delete('/:id' , verifyAdmin, deleteTour);
 
 //get single tour
 router.get('/:id' , getSingleTour);
