@@ -4,22 +4,31 @@ import {Container , Row , Col , Form , ListGroup} from 'reactstrap'
 import {useParams} from 'react-router-dom'
 import tourData from '../assets/data/tours'
 import calculateAvgRating from '../utils/avgRating'
+import useFetch from '../hooks/useFetch'
 
 import Bookings from '../Components/Booking/Bookings'
 
-import avatar from '../assets/images/avatar.jpg'
+import avatar from '/images/avatar.jpg'
 
 import NewsLetter from '../shared/NewsLetter'
+
+import { BASE_URL } from '../utils/config'
 
 function TourDetails() {
 
   const { id } = useParams();
 
   console.log(id);
-  
-  const tour = tourData.find(tour => tour.id === id);
 
-  const {photo , title , desc , price , reviews , address , city , distance ,  maxGroupSize} = tour;
+  const {data : AllTours , loading , error} = useFetch(`${BASE_URL}/tours/`);
+  
+  const tour = AllTours.find(tour => tour.id === id);
+
+
+
+  const {  title , photo , desc , price , reviews , address , city , distance ,  maxGroupSize} = tour;
+
+  console.log(photo);
 
   const { totalRating , avgRating} = calculateAvgRating(reviews);
 
@@ -45,7 +54,7 @@ function TourDetails() {
             <Row>
                <Col lg = '8'>
                  <div className = "tour__content">
-                     <img src = {photo} alt = ""/>
+                     <img src = {`/images/${photo}`} alt = ""/>
                      <div className = "tour__info">
                          <h2>{title}</h2>
                       <div className = "d-flex align-items-center gap-5">
@@ -100,7 +109,7 @@ function TourDetails() {
                               <ListGroup className = "user__reviews">
                                  {
                                    reviews?.map(review => (
-                                   <div className = "review__item">
+                                   <div className = "review__item" key ={review.id}>
                                         <img src = {avatar} alt = ""/>
                                         <div className = "w-100">
                                             <div className = "d-flex align-items-center justify-content-between">

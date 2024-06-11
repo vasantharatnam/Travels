@@ -5,7 +5,7 @@ import './news-letter.css'
 
 import {Container , Row , Col} from 'reactstrap'
 
-import maleTourist from '../assets/images/male-tourist.png'
+import maleTourist from '/images/male-tourist.png'
 
 function NewsLetter() {
   return (

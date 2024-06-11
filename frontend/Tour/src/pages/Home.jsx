@@ -2,10 +2,10 @@ import React from 'react'
 import "../styles/home.css"
 
 import {Container , Row , Col} from 'react-bootstrap'
-import heroImg from "../assets/images/hero-img01.jpg"
-import heroImg02 from "../assets/images/hero-img02.jpg"
-import heroVideo from "../assets/images/hero-video.mp4"
-import worldImg from "../assets/images/world.png"
+import heroImg from "/images/hero-img01.jpg"
+import heroImg02 from "/images/hero-img02.jpg"
+import heroVideo from "/images/hero-video.mp4"
+import worldImg from "/images/world.png"
 import Subtitle from '../shared/Subtitle'
 import MasonryimagesGallery from '../Components/image-gallery/MasonryimagesGallery'
 
@@ -14,7 +14,7 @@ import ServicesList from '../services/ServicesList'
 
 import FeaturedTourList from '../Components/Featured-tours/FeaturedTourList'
 
-import experienceImg from "../assets/images/experience.png"
+import experienceImg from "/images/experience.png"
 
 import Testimonials from '../Components/Testimonial/Testimonials'
 

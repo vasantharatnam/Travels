@@ -1,7 +1,7 @@
 import React , {useEffect , useRef}from 'react'
 import  {Container ,  Row , Button} from 'react-bootstrap'
 import { NavLink ,  Link } from 'react-router-dom'
-import logo from '../../assets/images/logo.png'
+ import logo from '/images/logo.png'
 
 import './header.css'
 

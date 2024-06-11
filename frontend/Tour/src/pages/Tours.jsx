@@ -7,6 +7,10 @@ import TourCard from '../shared/TourCard'
 import SearchBar from '../shared/SearchBar';
 import NewsLetter from '../shared/NewsLetter';
 
+import useFetch from '../hooks/useFetch'
+
+import { BASE_URL } from '../utils/config'
+
 import { Container , Row , Col } from 'reactstrap'
 
 
@@ -19,6 +23,10 @@ function Tours() {
          const pages = Math.ceil(5 / 4);
          setPageCount(pages);
     } , [page]);
+
+    const {data : AllTours , loading , error} = useFetch(`${BASE_URL}/tours/`);
+    console.log(AllTours);
+
 
   return (
     <>
@@ -34,7 +42,7 @@ function Tours() {
           <Container>
              <Row>
               {
-                tourData?.map((tour) => (
+                AllTours?.map((tour) => (
                    <Col lg = '3' className = 'mb-4'  key = {tour.id}>
                       <TourCard tour = {tour}/>
                    </Col> 

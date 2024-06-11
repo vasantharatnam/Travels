@@ -6,9 +6,9 @@ import {Link} from 'react-router-dom';
 
 import '../styles/login.css'
 
-import registerImg from '../assets/images/register.png'
+import registerImg from '/images/register.png'
 
-import userIcon from '../assets/images/user.png'
+import userIcon from '/images/user.png'
 
 
 function Register() {
